@@ -1,7 +1,8 @@
 #!/bin/bash
-userid=$(sudo -u zimbra /opt/zimbra/bin/zmprov gmi $1 | grep mailboxId: | awk '{ print $2 }')
+mbox=$1
+userid=$(sudo -u zimbra /opt/zimbra/bin/zmprov gmi $mbox | grep mailboxId: | awk '{ print $2 }')
 lastdir=$(ls -t /opt/zimbra/store/0/$userid/msg/ | awk '{ print $1 }' | head -1)
-echo "$(date +%T) Обработка ящика $1"
+echo "$(date +%T) Обработка ящика $mbox"
 echo "$(date +%T) Номер ящика: $userid"
 echo "$(date +%T) Создание дополнительной директории"
 mkdir -p /media/storage2/$userid/msg
@@ -15,3 +16,4 @@ do
    chown -R zimbra:zimbra /opt/zimbra/store/0/$userid/msg/$dirid
    echo "$(date +%T) Перемещение каталога номер $dirid завершено"
 done
+echo "$(date +%T) Перемещение всех каталогов $mbox завершено"
