@@ -25,6 +25,9 @@ if [[ $typeOfScript == "--help" || $typeOfScript == "-h" || $typeOfScript == "he
   exit;
 fi
 
+#SOCIAL LINKS BLOCK
+blockNine="<div style="margin-top: 5pt;"><span style="text-decoration: underline;">Подписывайтесь на нас:</span><br /><br /><a target="_blank" href="https://instagram.com/an_security"><img src="https://an-security.ru/img/header/insta_an-security.png" alt="Ссылка на страницу в Instagram" /></a><br /><a target="_blank" href="https://vk.com/ansecurity"><img src="https://an-security.ru/img/header/vk_an-security.png" alt="Ссылка на страницу в ВК" /></a></div>";
+
 # TYPE OF SIGNATURE
 if [[ $typeTrigger == "-t" && $typeOfSignature == "security" ]]; then
   signatureName="security";
@@ -163,7 +166,7 @@ elif [[ $typeOfScript == "-l" ]]; then
     echo "          Телефон: $telephoneNumber";
     
     echo "$(date +%T): Применение изменений";
-    newSignature="<div style='color: #264796; font-family: arial,helvetica,sans-serif; font-size: 10pt;'><div style='margin-bottom: 5pt;'><div>---</div><div>С уважением,</div></div><div style='margin-bottom: 5pt;'>$blockOne $blockTwo</div><div style='margin-bottom: 5pt;'>$blockThree $blockFour</div><div style='margin-bottom: 5pt;'>$blockFive $blockSix</div><div>$blockSeven $blockEight</div></div>";
+    newSignature="<div style='color: #264796; font-family: arial,helvetica,sans-serif; font-size: 10pt;'><div style='margin-bottom: 5pt;'><div>---</div><div>С уважением,</div></div><div style='margin-bottom: 5pt;'>$blockOne $blockTwo</div><div style='margin-bottom: 5pt;'>$blockThree $blockFour</div><div style='margin-bottom: 5pt;'>$blockFive $blockSix</div><div>$blockSeven $blockEight</div><div>$blockNine</div></div>";
     $zmprov msig $mbox $signatureName zimbraPrefMailSignature ""
     $zmprov msig $mbox $signatureName zimbraPrefMailSignatureHTML "$newSignature"
     
