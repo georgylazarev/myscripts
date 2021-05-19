@@ -104,7 +104,7 @@ if [[ $typeOfScript == "-s" ]]; then
   echo "          Телефон: $telephoneNumber";
   
   echo "$(date +%T): Применение изменений";
-  newSignature="<div style='color: #264796; font-family: arial,helvetica,sans-serif; font-size: 10pt;'><div style='margin-bottom: 5pt;'><div>---</div><div>С уважением,</div></div><div style='margin-bottom: 5pt;'>$blockOne $blockTwo</div><div style='margin-bottom: 5pt;'>$blockThree $blockFour</div><div style='margin-bottom: 5pt;'>$blockFive $blockSix</div><div>$blockSeven $blockEight</div></div>";
+  newSignature="<div style='color: #264796; font-family: arial,helvetica,sans-serif; font-size: 10pt;'><div style='margin-bottom: 5pt;'><div>---</div><div>С уважением,</div></div>$blockOne $blockTwo $blockThree $blockFour $blockFive $blockSix $blockSeven $blockEight $blockNine</div>";
   $zmprov msig $mbox $signatureName zimbraPrefMailSignature ""
   $zmprov msig $mbox $signatureName zimbraPrefMailSignatureHTML "$newSignature"
   
@@ -166,7 +166,7 @@ elif [[ $typeOfScript == "-l" ]]; then
     echo "          Телефон: $telephoneNumber";
     
     echo "$(date +%T): Применение изменений";
-    newSignature="<div style='color: #264796; font-family: arial,helvetica,sans-serif; font-size: 10pt;'><div style='margin-bottom: 5pt;'><div>---</div><div>С уважением,</div></div><div style='margin-bottom: 5pt;'>$blockOne $blockTwo</div><div style='margin-bottom: 5pt;'>$blockThree $blockFour</div><div style='margin-bottom: 5pt;'>$blockFive $blockSix</div><div>$blockSeven $blockEight</div><div>$blockNine</div></div>";
+    newSignature="<div style='color: #264796; font-family: arial,helvetica,sans-serif; font-size: 10pt;'><div style='margin-bottom: 5pt;'><div>---</div><div>С уважением,</div></div>$blockOne $blockTwo $blockThree $blockFour $blockFive $blockSix $blockSeven $blockEight $blockNine</div>";
     $zmprov msig $mbox $signatureName zimbraPrefMailSignature ""
     $zmprov msig $mbox $signatureName zimbraPrefMailSignatureHTML "$newSignature"
     
