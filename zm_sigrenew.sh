@@ -26,7 +26,7 @@ if [[ $typeOfScript == "--help" || $typeOfScript == "-h" || $typeOfScript == "he
 fi
 
 #SOCIAL LINKS BLOCK
-blockNine="<div style="margin-top: 5pt;"><span style="text-decoration: underline;">Подписывайтесь на нас:</span><br /><br /><a target="_blank" href="https://instagram.com/an_security"><img src="https://an-security.ru/img/header/insta_an-security.png" alt="Ссылка на страницу в Instagram" /></a><br /><a target="_blank" href="https://vk.com/ansecurity"><img src="https://an-security.ru/img/header/vk_an-security.png" alt="Ссылка на страницу в ВК" /></a></div>";
+blockNine="<div style='margin-top: 5pt;'><span style='text-decoration: underline;'>Подписывайтесь на нас:</span><br /><br /><a target='_blank' href='https://instagram.com/an_security'><img src='https://an-security.ru/img/header/insta_an-security.png' alt='Ссылка на страницу в Instagram' /></a><br /><a target='_blank' href='https://vk.com/ansecurity'><img src='https://an-security.ru/img/header/vk_an-security.png' alt='Ссылка на страницу в ВК' /></a></div>";
 
 # TYPE OF SIGNATURE
 if [[ $typeTrigger == "-t" && $typeOfSignature == "security" ]]; then
