@@ -62,6 +62,3 @@ else
   echo "";
   exit;
 fi
-
-
-sigID=$(sudo -u zimbra /opt/zimbra/bin/zmprov csig $1 security3);
