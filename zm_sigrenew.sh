@@ -26,20 +26,20 @@ if [[ $typeOfScript == "--help" || $typeOfScript == "-h" || $typeOfScript == "he
 fi
 
 #SOCIAL LINKS BLOCK
-blockNine="<div style='margin-top: 5pt;'><span style='text-decoration: underline;'>Подписывайтесь на нас:</span><br /><br /><a target='_blank' href='https://instagram.com/an_security'><img src='https://an-security.ru/img/header/insta_an-security.png' alt='Ссылка на страницу в Instagram' /></a><br /><a target='_blank' href='https://vk.com/ansecurity'><img src='https://an-security.ru/img/header/vk_an-security.png' alt='Ссылка на страницу в ВК' /></a></div>";
+blockNine="<div style='margin-top: 16px;'>Подписывайтесь на нас:<br /><a target='_blank' href='https://vk.com/ansecurity' rel='noopener'><img src='https://an-security.ru/img/header/vk-logo.png' alt='Ссылка на страницу в ВК' width='32' height='32' style='margin: 8px; margin-left: 0;' /></a><a target='_blank' href='https://instagram.com/an_security' rel='noopener'><img src='https://an-security.ru/img/header/instagram-logo.png' alt='Ссылка на страницу в Instagram' width='32' height='32' style='margin: 8px;' /></a></div>";
 
 # TYPE OF SIGNATURE
 if [[ $typeTrigger == "-t" && $typeOfSignature == "security" ]]; then
   signatureName="security";
-  blockSeven="<div><a href='https://an-security.ru' target='_blank' style='color: #1155cc;'>an-security.ru</a></div>";
+  blockSeven="<div style='margin-top: 5pt;'><a href='https://an-security.ru' target='_blank' style='color: #1155cc;'>an-security.ru</a></div>";
   blockEight="<div><a href='https://an-security.ru' target='_blank'><img src='https://an-security.ru/img/header/logo-email.png' width='200px' height='auto' alt='Логотип AN-Security' /></a></div>";
 elif [[ $typeTrigger == "-t" && $typeOfSignature == "direct" ]]; then
   signatureName="direct";
-  blockSeven="<div><a href='https://an-direct.ru' target='_blank' style='color: #1155cc;'>an-direct.ru</a></div>";
+  blockSeven="<div style='margin-top: 5pt;'><a href='https://an-direct.ru' target='_blank' style='color: #1155cc;'>an-direct.ru</a></div>";
   blockEight="<div><a href='https://an-direct.ru' target='_blank'><img src='https://an-security.ru/img/header/direct-logo-200.png' width='200px' height='auto'  alt='Логотип AN-Direct'></a></div>";
 elif [[ $typeTrigger == "-t" && $typeOfSignature == "falck" ]]; then
   signatureName="falck";
-  blockSeven="<div><a href='https://falck.tech' target='_blank' style='color: #1155cc;'>falck.tech</a></div>";
+  blockSeven="<div style='margin-top: 5pt;'><a href='https://falck.tech' target='_blank' style='color: #1155cc;'>falck.tech</a></div>";
   blockEight="<div><a href='https://falck.tech' target='_blank'><img src='https://an-security.ru/img/header/falck-logo-200.png' width='200px' height='auto' alt='Логотип Falck'></a></div>";
 else
   echo "";
@@ -74,7 +74,7 @@ if [[ $typeOfScript == "-s" ]]; then
   mobile=`$zmprov -l ga $mbox mobile | grep mobile: | sed 's/mobile: //'`;
   echo "          Мобильный: $mobile";
   if [[ -n $mobile ]]; then
-    blockThree="<div>$mobile</div>";
+    blockThree="<div style='margin-top: 5pt;'>$mobile</div>";
   else
     blockThree="";
   fi
@@ -86,11 +86,11 @@ if [[ $typeOfScript == "-s" ]]; then
   street=`$zmprov -l ga $mbox street | grep street: | sed 's/street: //'`;
   echo "          Адрес: $street";
   if [[ -n $l && -n $street ]]; then
-    blockFive="<div>$l, $street</div>";
+    blockFive="<div style='margin-top: 5pt;'>$l, $street</div>";
   elif [[ -z $l && -n $street ]]; then
-    blockFive="<div>$street</div>";
+    blockFive="<div style='margin-top: 5pt;'>$street</div>";
   elif [[ -n $l && -z $street ]]; then
-    blockFive="<div>$l</div>";
+    blockFive="<div style='margin-top: 5pt;'>$l</div>";
   else
     blockFive="";
   fi
@@ -136,7 +136,7 @@ elif [[ $typeOfScript == "-l" ]]; then
     mobile=`$zmprov -l ga $mbox mobile | grep mobile: | sed 's/mobile: //'`;
     echo "          Мобильный: $mobile";
     if [[ -n $mobile ]]; then
-      blockThree="<div>$mobile</div>";
+      blockThree="<div style='margin-top: 5pt;'>$mobile</div>";
     else
       blockThree="";
     fi
@@ -148,11 +148,11 @@ elif [[ $typeOfScript == "-l" ]]; then
     street=`$zmprov -l ga $mbox street | grep street: | sed 's/street: //'`;
     echo "          Адрес: $street";
     if [[ -n $l && -n $street ]]; then
-      blockFive="<div>$l, $street</div>";
+      blockFive="<div style='margin-top: 5pt;'>$l, $street</div>";
     elif [[ -z $l && -n $street ]]; then
-      blockFive="<div>$street</div>";
+      blockFive="<div style='margin-top: 5pt;'>$street</div>";
     elif [[ -n $l && -z $street ]]; then
-      blockFive="<div>$l</div>";
+      blockFive="<div style='margin-top: 5pt;'>$l</div>";
     else
       blockFive="";
     fi
