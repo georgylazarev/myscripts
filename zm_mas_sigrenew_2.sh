@@ -11,6 +11,7 @@ do
   if [[ $status == 'active' ]]; then
     echo "";
     echo "$(date +%T): Сбор информации для профиля $mbox";
+    echo "          Статус: $status";
 
     displayName=`$zmprov -l ga $mbox displayName | grep displayName: | sed 's/displayName: //'`;
     echo "          ФИО: $displayName";
@@ -48,7 +49,7 @@ do
     fi
 
     typeOfEmail=$($zmprov ga $mbox company | grep '^company:' | awk '{print $2}' | sed 's/,//');
-    echo "$(date +%T): Тип профиля: $typeOfEmail";
+    echo "          Тип профиля: $typeOfEmail";
     if [[ $typeOfEmail == "Директ" ]]; then
       blockSix="<div  style='margin-top: 5pt;'><a href='https://an-direct.ru' target='_blank' rel='noopener'><img src='https://an-security.ru/img/header/direct-logo-200.png' width='200px' height='auto' alt='Логотип AN-Security Директ' /></a></div>";
     elif [[ $typeOfEmail == "Фальк" ]]; then
