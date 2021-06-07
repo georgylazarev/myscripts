@@ -61,8 +61,8 @@ do
     echo "$(date +%T): Применение изменений";
 
     newSignature="$blockZero $blockOne $blockTwo $blockThree $blockFour $blockFive $blockSix $blockSeven";
-    #$zmprov msig $mbox $signatureName zimbraPrefMailSignature ""
-    #$zmprov msig $mbox $signatureName zimbraPrefMailSignatureHTML "$newSignature"
+    $zmprov msig $mbox $signatureName zimbraPrefMailSignature ""
+    $zmprov msig $mbox $signatureName zimbraPrefMailSignatureHTML "$newSignature"
 
     echo "$(date +%T): ящик $mbox готов";
     echo "";
