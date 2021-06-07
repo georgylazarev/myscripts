@@ -61,6 +61,11 @@ do
     echo "$(date +%T): Применение изменений";
 
     newSignature="$blockZero $blockOne $blockTwo $blockThree $blockFour $blockFive $blockSix $blockSeven";
+    
+    sigID=$($zmprov csig $mbox $signatureName);
+    $zmprov mid $mbox default zimbraPrefDefaultSignatureId $sigID;
+    $zmprov mid $mbox default zimbraPrefForwardReplySignatureId $sigID;
+    
     $zmprov msig $mbox $signatureName zimbraPrefMailSignature ""
     $zmprov msig $mbox $signatureName zimbraPrefMailSignatureHTML "$newSignature"
 
