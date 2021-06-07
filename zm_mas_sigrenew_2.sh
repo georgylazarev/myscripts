@@ -5,7 +5,7 @@ signatureName="security21";
 blockZero="<div style='color: #264796; font-family: arial,helvetica,sans-serif; font-size: 10pt;'><div>---</div><div>С уважением,</div>";
 blockSeven="<div style='margin-top: 16px;'>Подписывайтесь на нас:<br /><a target='_blank' href='https://instagram.com/an_security' rel='noopener'><img src='https://an-security.ru/img/header/instagram-logo.png' alt='Ссылка на страницу в Instagram' width='32' height='32' style='margin: 8px; margin-left: 0;' /></a><a target='_blank' href='https://vk.com/ansecurity' rel='noopener'><img src='https://an-security.ru/img/header/vk-logo.png' alt='Ссылка на страницу в ВК' width='32' height='32' style='margin: 8px;' /></a></div></div>";
 
-$zmprov -l gaa | grep 'an-security' | while read mbox
+cat $1 | while read mbox
 do
   echo "";
   echo "$(date +%T): Сбор информации для профиля $mbox";
@@ -58,11 +58,8 @@ do
   echo "$(date +%T): Применение изменений";
   
   newSignature="$blockZero $blockOne $blockTwo $blockThree $blockFour $blockFive $blockSix $blockSeven";
-  #$zmprov msig $mbox $signatureName zimbraPrefMailSignature ""
-  #$zmprov msig $mbox $signatureName zimbraPrefMailSignatureHTML "$newSignature"
-  
-  echo $signatureName;
-  echo $newSignature;
+  $zmprov msig $mbox $signatureName zimbraPrefMailSignature ""
+  $zmprov msig $mbox $signatureName zimbraPrefMailSignatureHTML "$newSignature"
   
   echo "$(date +%T): ящик $mbox готов";
   echo "";
