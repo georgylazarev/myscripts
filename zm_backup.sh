@@ -7,6 +7,16 @@ zmbox="/opt/zimbra/bin/zmmailbox";
 zmprov="/opt/zimbra/bin/zmprov";
 backupdir="/opt/zimbra/backup";
 
+# Создание директории для логов
+if ! [ -d $backupdir/logs/ ]; then
+  mkdir $backupdir/logs;
+fi
+
+# Создание директории для списка аккаунтов
+if ! [ -d $backupdir/active_accounts/ ]; then
+  mkdir $backupdir/active_accounts;
+fi
+
 backup_log="$backupdir/logs/${root_date}_backup_log"; # Файл логов
 active_accounts="$backupdir/active_accounts/${root_date}_accounts"; # Файл активных на текущий день аккаунтов
 
