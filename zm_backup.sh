@@ -1,6 +1,7 @@
 #!/bin/bash
-root_date=$(date +%Y-%m-%d -d "$1") 
+root_date=$(date +%Y-%m-%d -d "$1");
 # Дата создания бэкапа. !!!Сам бэкап берется за день до заданной даты!!!
+# Если задать дату при вызове скрипта, то будет выполнен бэкап за день до введенной даты
 
 zmbox="/opt/zimbra/bin/zmmailbox";
 zmprov="/opt/zimbra/bin/zmprov";
